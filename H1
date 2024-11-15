@@ -3,45 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nodo 1</title>
+    <title>Dragon Ball Load Balancer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background: linear-gradient(to right, #4facfe, #00f2fe);
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #fff;
-        }
-        .container {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 20px 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
-        .container:hover {
-            transform: scale(1.1);
-        }
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-        p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            color: #e0e0e0;
+            background: radial-gradient(circle, rgba(10,10,50,1) 0%, rgba(0,0,0,1) 100%);
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Nodo 1</h1>
-        <p>Bienvenido al Nodo 1, el lugar donde la magia comienza.</p>
+<body class="text-white">
+    <!-- Header -->
+    <header class="text-center py-6 bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500">
+        <h1 class="text-4xl md:text-6xl font-extrabold">JOSUE SANTIAGO LOPEZ RAMOS</h1>
+    </header>
+
+    <!-- Nodo 1 Section -->
+    <div class="flex justify-center items-center h-20 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <h1 class="text-4xl md:text-6xl font-extrabold animate-pulse">Nodo 1</h1>
     </div>
+
+    <!-- Main Banner -->
+    <div class="w-full">
+        <img src="https://images5.alphacoders.com/132/1329226.jpeg" alt="Dragon Ball Characters" class="w-full h-auto mb-6">
+    </div>
+
+    <!-- Gogeta Section -->
+    <div class="w-full">
+        <img src="https://mrwallpaper.com/images/high/gogeta-4k-8k-hd-dragon-ball-wallpaper-wahj3y37db71j0ba.jpg" alt="Gogeta" class="w-full h-auto mb-6">
+    </div>
+
+    <!-- Sparking Zero Banner -->
+    <div class="w-full">
+        <img src="https://static.bandainamcoent.eu/high/dragon-ball/dragon-ball-sparking-zero/00-page-setup/Page-Setup-Revamp/DBSZ_banner_mobile.jpg" alt="Sparking Zero" class="w-full h-auto mb-6">
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto p-6">
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Bienvenido a la Galaxia de Dragon Ball</h2>
+            <p class="text-lg md:text-xl text-gray-300">Explora la información sobre los personajes más poderosos y los planetas legendarios de la saga.</p>
+        </section>
+
+        <!-- Characters Section -->
+        <section class="mb-12">
+            <h3 class="text-2xl md:text-4xl font-semibold text-yellow-400 mb-6">Personajes</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Character Card -->
+                <div class="bg-gray-800 rounded-lg shadow-md p-4">
+                    <h4 class="text-xl font-bold mb-2">Goku</h4>
+                    <p class="text-gray-300">El Saiyajin criado en la Tierra que siempre busca superar sus límites.</p>
+                </div>
+                <!-- Character Card -->
+                <div class="bg-gray-800 rounded-lg shadow-md p-4">
+                    <h4 class="text-xl font-bold mb-2">Vegeta</h4>
+                    <p class="text-gray-300">El príncipe de los Saiyajin, orgulloso y determinado a ser el mejor.</p>
+                </div>
+                <!-- Character Card -->
+                <div class="bg-gray-800 rounded-lg shadow-md p-4">
+                    <h4 class="text-xl font-bold mb-2">Gohan</h4>
+                    <p class="text-gray-300">El hijo de Goku, un guerrero con un enorme potencial oculto.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planets Section -->
+        <section>
+            <h3 class="text-2xl md:text-4xl font-semibold text-green-400 mb-6">Planetas</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Planet Card -->
+                <div class="bg-gray-800 rounded-lg shadow-md p-4">
+                    <h4 class="text-xl font-bold mb-2">Planeta Vegeta</h4>
+                    <p class="text-gray-300">El hogar original de los Saiyajin antes de su destrucción.</p>
+                </div>
+                <!-- Planet Card -->
+                <div class="bg-gray-800 rounded-lg shadow-md p-4">
+                    <h4 class="text-xl font-bold mb-2">Namek</h4>
+                    <p class="text-gray-300">Un planeta pacífico conocido por sus guerreros y las esferas del dragón.</p>
+                </div>
+                <!-- Planet Card -->
+                <div class="bg-gray-800 rounded-lg shadow-md p-4">
+                    <h4 class="text-xl font-bold mb-2">Tierra</h4>
+                    <p class="text-gray-300">El hogar adoptivo de Goku y el centro de muchas batallas épicas.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 mt-12 bg-gray-900">
+        <p class="text-gray-400">&copy; 2024 Dragon Ball Load Balancer Demo. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
