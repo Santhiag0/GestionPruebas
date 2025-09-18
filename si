@@ -1,0 +1,72 @@
+# Huffman Coding en Python para Google Colab
+
+from collections import Counter
+import heapq
+import graphviz
+from IPython.display import Image, display
+
+class NodoHuffman:
+    def __init__(self, caracter, frecuencia):
+        self.caracter = caracter
+        self.frecuencia = frecuencia
+        self.izq = None
+        self.der = None
+
+    def __lt__(self, other):
+        return self.frecuencia < other.frecuencia
+
+def construir_arbol(frecuencias):
+    heap = [NodoHuffman(caracter, freq) for caracter, freq in frecuencias.items()]
+    heapq.heapify(heap)
+    
+    while len(heap) > 1:
+        nodo1 = heapq.heappop(heap)
+        nodo2 = heapq.heappop(heap)
+        nuevo = NodoHuffman(None, nodo1.frecuencia + nodo2.frecuencia)
+        nuevo.izq = nodo1
+        nuevo.der = nodo2
+        heapq.heappush(heap, nuevo)
+    return heap[0]
+
+def generar_codigos(nodo, prefijo="", codigos=None):
+    if codigos is None:
+        codigos = {}
+    if nodo:
+        if nodo.caracter is not None:
+            codigos[nodo.caracter] = prefijo
+        generar_codigos(nodo.izq, prefijo + "0", codigos)
+        generar_codigos(nodo.der, prefijo + "1", codigos)
+    return codigos
+
+def codificar_texto(texto, codigos):
+    return ''.join(codigos[letra] for letra in texto)
+
+def visualizar_arbol(nodo):
+    dot = graphviz.Digraph()
+    def agregar_nodo(n, padre_id=None, direccion=''):
+        if n:
+            id_actual = str(id(n))
+            etiqueta = n.caracter if n.caracter else f'({n.frecuencia})'
+            dot.node(id_actual, etiqueta)
+            if padre_id:
+                dot.edge(padre_id, id_actual, direccion)
+            agregar_nodo(n.izq, id_actual, '0')
+            agregar_nodo(n.der, id_actual, '1')
+    agregar_nodo(nodo)
+    return dot
+
+# --- Interfaz para Google Colab ---
+palabra = input("Ingresa la palabra: ").upper()
+frecuencias = Counter(palabra)
+arbol = construir_arbol(frecuencias)
+codigos = generar_codigos(arbol)
+codificado = codificar_texto(palabra, codigos)
+
+print("Frecuencias:", frecuencias)
+print("Códigos Huffman:", codigos)
+print("Palabra codificada:", codificado)
+
+# Visualización del árbol de Huffman
+dot = visualizar_arbol(arbol)
+dot.render('huffman_tree', format='png')  # Genera la imagen
+display(Image(filename='huffman_tree.png'))  # Muestra la imagen en la celda
